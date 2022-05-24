@@ -56,7 +56,10 @@ const RestLogin = ({ className, ...rest }) => {
                                 setSubmitting(false);
                                 var msg = "";
                                 for (let [key, value] of Object.entries(error.response.data)) {
-                                    msg+=`${key}: ${value} \n`;
+                                    if(key!=='success'){
+                                        msg+=`${value} \n`;
+                                    }
+                                    
                                 }
                                 toast.error(msg,{
                                     duration: 3000,

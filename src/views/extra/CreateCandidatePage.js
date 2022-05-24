@@ -32,7 +32,7 @@ const CreateCandidatePage = () => {
     const [candidateWebsite, setCandidateWebsite] = useState("");
     const [candidateResume, setCandidateResume] = useState([]);
     const [candidateStatus, setCandidateStatus] = useState("Applied");
-    
+    const [candidateProjects, setCandidateProjects] = useState("");
 
     
     function getStates(countryisocode){
@@ -197,6 +197,7 @@ const CreateCandidatePage = () => {
             formData.append('country', allCountries.find(country => country.isoCode===selectedCountry).name);
             formData.append('state', allStates.find(state => state.isoCode===selectedState && state.countryCode === selectedCountry).name);
             formData.append('city', selectedCity);
+            formData.append('projects',candidateProjects);
             console.log("FormData",formData);
             axios.post(API_SERVER + 'candidate', formData)
             .then(function (response) {
@@ -269,6 +270,11 @@ const CreateCandidatePage = () => {
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
                                         <Form.Label>Past Experiences<small> *(enter NA if not applicable)</small></Form.Label>
                                         <Form.Control as="textarea" rows="3" value={candidateExperience} onChange = {e => setCandidateExperience(e.target.value)} />
+                                </Form.Group>
+
+                                <Form.Group controlId="exampleForm.ControlTextarea1">
+                                        <Form.Label>Projects<small></small></Form.Label>
+                                        <Form.Control as="textarea" rows="3" value={candidateProjects} placeholder="Describe briefly about notable projects you have done" onChange = {e => setCandidateProjects(e.target.value)} />
                                 </Form.Group>
 
                                 <Form.Group controlId="formGridAddress1">

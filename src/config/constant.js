@@ -1,7 +1,7 @@
 export const BASENAME = ''; // don't add '/' at end off BASENAME
 export const BASE_URL = '/app/dashboard/default';
 export const BASE_TITLE = ' | Speed up your Hiring ';
-export const API_SERVER = 'https://jobapplication-reviewer.herokuapp.com/api/';
+export const API_SERVER = 'https://job-application-reviewer.herokuapp.com/api/';
 // export const API_SERVER = 'http://localhost:8000/api/'; // for running on local server
 export const CONFIG = {
     layout: 'vertical', // disable on free version

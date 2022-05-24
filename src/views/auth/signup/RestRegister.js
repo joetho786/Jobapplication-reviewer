@@ -49,7 +49,9 @@ const RestRegister = ({ className, ...rest }) => {
                                 setSubmitting(false);
                                 var msg = "";
                                 for (let [key, value] of Object.entries(error.response.data)) {
+                                    if(key!=='success'){
                                     msg+=`${key}: ${value} \n`;
+                                    }
                                 }
                                 toast.error(msg,{
                                     duration: 3000,

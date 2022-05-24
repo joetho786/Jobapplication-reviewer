@@ -64,7 +64,7 @@ const DetailedCandidateView = () => {
                                 </Form.Label>
                                 <Col sm="9">
                                
-                                <select className={status==='Accepted' ? 'border p-1 btn-success': status==='Rejected'? 'border p-1 btn-danger': 'border p-1 btn-primary'} value={status} onChange={e => handleStatusSelect(e)}>
+                                <select className={status==='Accepted' ? 'border p-2 btn-success': status==='Rejected'? 'border p-2 btn-danger': 'border p-2 btn-primary'} value={status} onChange={e => handleStatusSelect(e)}>
                                     <option>{status}</option>
                                     {status_states.filter(s=>s!==status).map((state,index) => {
                                         return <option key={index} value={state}>{state}</option>
@@ -147,7 +147,7 @@ const DetailedCandidateView = () => {
             <Row>
                 <Col>
                     <Card title="Description" isOption>
-                            <p>{candidateDetails.description==="" || candidateDetails.description === null?'Not Provided':candidateDetails.description}</p>
+                    <Form.Control as="textarea" rows="3" plaintext readOnly defaultValue={candidateDetails.description==="" || candidateDetails.description === null?'Not Provided':candidateDetails.description} />
                     </Card>
                 </Col>
             </Row>
@@ -155,7 +155,15 @@ const DetailedCandidateView = () => {
             <Row>
                 <Col>
                     <Card title="Experience" isOption>
-                            <p>{candidateDetails.experience==="" || candidateDetails.experience === null?'Not Provided':candidateDetails.experience}</p>
+                    <Form.Control as="textarea" rows="3" plaintext readOnly defaultValue={candidateDetails.experience==="" || candidateDetails.experience === null?'Not Provided':candidateDetails.experience}/>
+                    </Card>
+                </Col>
+            </Row>
+            {/* Next Section */}
+            <Row>
+                <Col>
+                    <Card title="Projects" isOption>
+                    <Form.Control as="textarea" rows="3" plaintext readOnly defaultValue={candidateDetails.projects==="" || candidateDetails.projects === null?'Not Provided':candidateDetails.projects}/>
                     </Card>
                 </Col>
             </Row>
