@@ -17,7 +17,7 @@ An user friendly website to make it easier for HR to review applications submitt
 
 > Links
 
-- Backend Server Repository:
+- Backend Server Repository: [https://github.com/joetho786/Jobapplication-Reviewer-Backend](https://github.com/joetho786/Jobapplication-Reviewer-Backend)
 
 ## ✨ Setup in local environment
 
