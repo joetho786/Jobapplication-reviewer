@@ -5,7 +5,7 @@ const NavSearch = (props) => {
     const { windowWidth } = props;
     const [isOpen, setIsOpen] = useState(windowWidth < 600);
     const [searchString, setSearchString] = useState(windowWidth < 600 ? '100px' : '');
-
+    const [searchText, setSearchText] = useState('');
     const searchOnHandler = () => {
         if (windowWidth < 600) {
             document.querySelector('#navbar-right').classList.add('d-none');
@@ -33,7 +33,7 @@ const NavSearch = (props) => {
         <React.Fragment>
             <div id="main-search" className={searchClass.join(' ')}>
                 <div className="input-group">
-                    <input type="text" id="m-search" className="form-control" placeholder="Search . . ." style={{ width: searchString }} />
+                    <input type="text" value={searchText} onChange={e => setSearchText(e.target.value)} id="m-search" className="form-control" placeholder="Search . . ." style={{ width: searchString }} />
                     <Link to="#" className="input-group-append search-close" onClick={searchOffHandler}>
                         <i className="feather icon-x input-group-text" />
                     </Link>
