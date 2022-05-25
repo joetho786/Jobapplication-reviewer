@@ -8,7 +8,7 @@ import ChatList from './ChatList';
 import { API_SERVER } from '../../../../config/constant';
 import { LOGOUT } from './../../../../store/actions';
 
-import avatar1 from '../../../../assets/images/user/avatar-1.jpg';
+import avatar1 from '../../../../assets/images/user/avatar-neutral.png';
 // import avatar2 from '../../../../assets/images/user/avatar-2.jpg';
 // import avatar3 from '../../../../assets/images/user/avatar-3.jpg';
 // import avatar4 from '../../../../assets/images/user/avatar-4.jpg';
